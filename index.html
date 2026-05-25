@@ -4,920 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aman Kumar Singh — Software Engineer</title>
+    <title>Aman Kumar Singh </title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
-    <style>
-        :root {
-            --bg: #0a0a0f;
-            --bg2: #111118;
-            --bg3: #18181f;
-            --accent: #7c6dfa;
-            --accent2: #fa6d6d;
-            --accent3: #6dfad5;
-            --text: #f0eeff;
-            --muted: #7a7890;
-            --border: rgba(124, 109, 250, 0.18);
-            --card: rgba(255, 255, 255, 0.03);
-            --font-head: 'Syne', sans-serif;
-            --font-mono: 'Space Mono', monospace;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--font-mono);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.6;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(124, 109, 250, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(124, 109, 250, 0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--accent3);
-        }
-
-        /* NAV */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.2rem 3rem;
-            background: rgba(10, 10, 15, 0.88);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-logo {
-            font-family: var(--font-head);
-            font-weight: 800;
-            font-size: 1.15rem;
-            letter-spacing: -0.02em;
-            color: var(--text);
-        }
-
-        .nav-logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.4rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.78rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--muted);
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-        .nav-cta {
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.5rem 1.2rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .nav-cta:hover {
-            background: var(--accent);
-            color: var(--bg);
-        }
-
-        /* HERO */
-        #hero {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 8rem 3rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-tag {
-            font-size: 0.72rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent3);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .hero-tag::before {
-            content: '';
-            display: block;
-            width: 32px;
-            height: 1px;
-            background: var(--accent3);
-        }
-
-        h1 {
-            font-family: var(--font-head);
-            font-size: clamp(3rem, 7vw, 7rem);
-            font-weight: 800;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-        }
-
-        h1 .line2 {
-            color: transparent;
-            -webkit-text-stroke: 1.5px rgba(124, 109, 250, 0.5);
-        }
-
-        h1 .accent-word {
-            position: relative;
-            color: var(--accent);
-        }
-
-        h1 .accent-word::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--accent2);
-            border-radius: 2px;
-        }
-
-        .hero-sub {
-            max-width: 560px;
-            font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.85;
-            margin-bottom: 3rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 2rem;
-            background: var(--accent);
-            color: var(--bg);
-            font-family: var(--font-mono);
-            font-size: 0.82rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(124, 109, 250, 0.4);
-            color: var(--bg);
-        }
-
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 2rem;
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-family: var(--font-mono);
-            font-size: 0.82rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: border-color 0.2s, color 0.2s;
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .hero-scroll {
-            position: absolute;
-            bottom: 2.5rem;
-            left: 3rem;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--muted);
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .hero-orb {
-            position: absolute;
-            top: 15%;
-            right: -80px;
-            width: 520px;
-            height: 520px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(124, 109, 250, 0.16) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-orb2 {
-            position: absolute;
-            bottom: 5%;
-            right: 20%;
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(109, 250, 213, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        /* SECTIONS */
-        section {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 6rem 3rem;
-        }
-
-        .section-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .section-label::after {
-            content: '';
-            flex: 1;
-            max-width: 60px;
-            height: 1px;
-            background: var(--accent);
-        }
-
-        h2 {
-            font-family: var(--font-head);
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 3rem;
-            line-height: 1.1;
-        }
-
-        /* ABOUT */
-        #about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .about-text p {
-            font-size: 0.88rem;
-            color: var(--muted);
-            margin-bottom: 1.2rem;
-        }
-
-        .about-text p strong {
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 2rem;
-        }
-
-        .stat-box {
-            background: var(--bg2);
-            padding: 1.5rem;
-        }
-
-        .stat-num {
-            font-family: var(--font-head);
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 0.3rem;
-        }
-
-        .stat-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        /* SKILLS */
-        .skills-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .skill-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.45rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 0.78rem;
-            color: var(--muted);
-            background: var(--card);
-            transition: all 0.2s;
-            cursor: default;
-        }
-
-        .skill-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(124, 109, 250, 0.08);
-        }
-
-        .skill-tag.hot {
-            border-color: rgba(109, 250, 213, 0.3);
-            color: var(--accent3);
-        }
-
-        .skill-tag.trending {
-            border-color: rgba(250, 109, 109, 0.3);
-            color: var(--accent2);
-        }
-
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            background: var(--bg2);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent3));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(124, 109, 250, 0.35);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .project-year {
-            font-size: 0.68rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 0.8rem;
-        }
-
-        .project-title {
-            font-family: var(--font-head);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.7rem;
-            color: var(--text);
-        }
-
-        .project-desc {
-            font-size: 0.82rem;
-            color: var(--muted);
-            line-height: 1.75;
-            margin-bottom: 1.4rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.4rem;
-        }
-
-        .project-tag {
-            font-size: 0.68rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.25rem 0.7rem;
-            background: rgba(124, 109, 250, 0.1);
-            color: var(--accent);
-            border-radius: 3px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid var(--border);
-            align-items: center;
-        }
-
-        .project-link {
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--muted);
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            transition: color 0.2s;
-        }
-
-        .project-link:hover {
-            color: var(--accent3);
-        }
-
-        .badge-new {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            font-size: 0.62rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.25rem 0.6rem;
-            background: rgba(109, 250, 213, 0.1);
-            color: var(--accent3);
-            border: 1px solid rgba(109, 250, 213, 0.3);
-            border-radius: 3px;
-        }
-
-        /* EXPERIENCE */
-        .exp-list {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .exp-item {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 2rem;
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-        }
-
-        .exp-item::before {
-            content: '';
-            position: absolute;
-            left: 156px;
-            top: 2.6rem;
-            bottom: -1px;
-            width: 1px;
-            background: var(--border);
-        }
-
-        .exp-item:last-child {
-            border-bottom: none;
-        }
-
-        .exp-period {
-            font-size: 0.72rem;
-            letter-spacing: 0.08em;
-            color: var(--muted);
-            padding-top: 0.2rem;
-            line-height: 1.5;
-        }
-
-        .exp-dot {
-            position: absolute;
-            left: 150px;
-            top: 2.7rem;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: var(--bg);
-            border: 2px solid var(--accent);
-        }
-
-        .exp-company {
-            font-family: var(--font-head);
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-
-        .exp-role {
-            font-size: 0.78rem;
-            color: var(--accent3);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-        }
-
-        .exp-desc {
-            font-size: 0.82rem;
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .exp-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .exp-tech span {
-            font-size: 0.68rem;
-            padding: 0.2rem 0.6rem;
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            color: var(--muted);
-        }
-
-        /* EDUCATION */
-        .edu-card {
-            background: var(--bg2);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem 2.4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            transition: border-color 0.25s;
-        }
-
-        .edu-card:hover {
-            border-color: rgba(124, 109, 250, 0.4);
-        }
-
-        .edu-degree {
-            font-family: var(--font-head);
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .edu-inst {
-            font-size: 0.82rem;
-            color: var(--accent3);
-            margin-bottom: 0.6rem;
-        }
-
-        .edu-courses {
-            font-size: 0.78rem;
-            color: var(--muted);
-        }
-
-        .edu-year {
-            font-size: 0.72rem;
-            color: var(--muted);
-            white-space: nowrap;
-            text-align: right;
-        }
-
-        /* WORKSHOPS / CERTS */
-        .workshops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .workshop-card {
-            background: var(--bg2);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .workshop-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(124, 109, 250, 0.35);
-        }
-
-        .workshop-icon {
-            font-size: 1.4rem;
-            margin-bottom: 0.7rem;
-        }
-
-        .workshop-title {
-            font-family: var(--font-head);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .workshop-org {
-            font-size: 0.76rem;
-            color: var(--accent3);
-            margin-bottom: 0.5rem;
-        }
-
-        .workshop-date {
-            font-size: 0.7rem;
-            color: var(--muted);
-        }
-
-        /* CONTACT */
-        #contact-inner {
-            max-width: 640px;
-        }
-
-        #contact-inner p {
-            font-size: 0.88rem;
-            color: var(--muted);
-            margin-bottom: 2.5rem;
-            line-height: 1.85;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        /* TERMINAL */
-        .terminal {
-            background: #0d0d14;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            font-size: 0.8rem;
-        }
-
-        .terminal-bar {
-            background: #18181f;
-            padding: 0.7rem 1rem;
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .dot-r {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #fa6d6d;
-        }
-
-        .dot-y {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #fac75f;
-        }
-
-        .dot-g {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #6dfad5;
-        }
-
-        .terminal-body {
-            padding: 1.2rem 1.4rem;
-            line-height: 2;
-        }
-
-        .t-prompt {
-            color: var(--accent3);
-        }
-
-        .t-cmd {
-            color: var(--text);
-        }
-
-        .t-output {
-            color: var(--muted);
-        }
-
-        .t-key {
-            color: var(--accent);
-        }
-
-        .t-val {
-            color: var(--accent2);
-        }
-
-        .t-str {
-            color: var(--accent3);
-        }
-
-        .t-cursor {
-            display: inline-block;
-            width: 8px;
-            height: 1em;
-            background: var(--accent);
-            animation: pulse 1s ease-in-out infinite;
-            vertical-align: text-bottom;
-        }
-
-        /* FOOTER */
-        footer {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 2rem 3rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.72rem;
-            color: var(--muted);
-            letter-spacing: 0.08em;
-        }
-
-        /* ANIMATIONS */
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 0.4
-            }
-
-            50% {
-                opacity: 1
-            }
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(28px)
-            }
-
-            to {
-                opacity: 1;
-                transform: none
-            }
-        }
-
-        .fade-up {
-            animation: fadeUp 0.7s ease both;
-        }
-
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.25s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.4s;
-        }
-
-        .delay-4 {
-            animation-delay: 0.55s;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            #hero {
-                padding: 7rem 1.5rem 4rem;
-            }
-
-            #about-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .exp-item {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-
-            .exp-item::before,
-            .exp-dot {
-                display: none;
-            }
-
-            .edu-card {
-                flex-direction: column;
-            }
-
-            h1 {
-                font-size: clamp(2.4rem, 10vw, 4rem);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="portfolio.css" />
 </head>
 
 <body>
 
+    <div class="cursor" id="cur"></div>
+    <div class="cursor-ring" id="curRing"></div>
+
     <!-- NAV -->
     <nav>
-        <span class="nav-logo">Aman<span>.</span>Singh</span>
+        <span class="nav-logo">Aman<em>.</em>Singh</span>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -929,232 +30,249 @@
     </nav>
 
     <!-- HERO -->
-    <section id="hero">
-        <div class="hero-orb"></div>
-        <div class="hero-orb2"></div>
-
-        <div class="hero-tag fade-up">Open to Opportunities — Graduating May 2026</div>
-
-        <h1 class="fade-up delay-1">
-            Code.<br />
-            <span class="line2">Create.</span><br />
-            <span class="accent-word">Innovate</span>.
-        </h1>
-
-        <p class="hero-sub fade-up delay-2">
-            Hi, I'm <strong style="color:var(--text)">Aman Kumar Singh</strong> — a BTech Computer Science student at
-            IIITM Gorakhpur,
-            passionate about building AI-powered applications, voice interfaces, and full-stack web products.
-            Turning ideas into reality with Python, JavaScript, and everything in between.
-        </p>
-
-        <div class="hero-actions fade-up delay-3">
-            <a href="#projects" class="btn-primary">View Projects ↓</a>
-            <a href="https://github.com/MrAmanSingh" class="btn-ghost" target="_blank">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/aman-singh-a5613020a" class="btn-ghost" target="_blank">LinkedIn ↗</a>
+    <div id="hero">
+        <div class="hero-left">
+            <span class="hero-greeting">Available for Opportunities — 2026</span>
+            <h1>
+                Hello, my<br />
+                name's <em>Aman.</em><br />
+                Turning Idea <span class="stroke"> <br> into Scalable </span><br />
+                Software.
+            </h1>
+            <p class="hero-desc">
+                Completed <strong>My B.Tech CSE</strong> at ITM Gorakhpur, building AI-powered apps,
+                voice interfaces, and full-stack web products. Passionate about creating things that matter.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-fill">See My Work ↓</a>
+                <a href="https://github.com/MrAmanSingh" class="btn-outline" target="_blank">GitHub ↗</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/aman-singh-a5613020a" target="_blank">↗ LinkedIn</a>
+                <a href="mailto:amankumarsingh0008@gmail.com">✉ Email</a>
+                <a href="tel:+919453608506">📱 Call</a>
+            </div>
         </div>
 
-        <div class="hero-scroll">scroll</div>
-    </section>
+        <div class="hero-right">
+            <div class="shape-scene">
+                <!-- Main profile card -->
+                <div class="card-main shape-card">
+                    <div class="card-main-avatar">👨‍💻</div>
+                    <div class="card-main-name">Aman Kumar Singh</div>
+                    <div class="card-main-role">Software Engineer · CSE 2026</div>
+                    <div class="card-skills">
+                        <span class="card-skill cs-py">Python</span>
+                        <span class="card-skill cs-js">JavaScript</span>
+                        <span class="card-skill cs-ai">AI / ML</span>
+                        <span class="card-skill cs-java">Java</span>
+                    </div>
+                </div>
+
+                <!-- Floating mini cards -->
+                <div class="mini-card mc-accuracy">
+                    <div class="mc-icon">🎙️</div>
+                    <div>
+                        <div class="mc-value">92%</div>
+                        <div class="mc-label">Voice Accuracy</div>
+                    </div>
+                </div>
+
+                <div class="mini-card mc-jarvis">
+                    <div class="mc-dot"></div>
+                    <div>
+                        <div class="mc-jtxt">JARVIS AI Active</div>
+                        <div class="mc-jsub">40+ voice commands</div>
+                    </div>
+                </div>
+
+                <div class="mini-card mc-grad">
+                    <div class="mc-icon">🎓</div>
+                    <div>
+                        <div class="mc-value" style="color:var(--teal)">2026</div>
+                        <div class="mc-label">Graduated</div>
+                    </div>
+                </div>
+
+                <!-- Decorative -->
+                <div class="deco-ring"></div>
+                <div class="deco-dot"></div>
+                <div class="deco-sq"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- ABOUT -->
-    <section id="about">
-        <div class="section-label">01 — About</div>
-        <h2>Who I Am</h2>
-
-        <div id="about-grid">
-            <div class="about-text reveal">
-                <p>I'm <strong>Aman Kumar Singh</strong>, a final-year B.Tech student in Computer Science & Engineering
-                    at the
-                    Institute of Technology and Management, Gorakhpur. I graduate in <strong>May 2026</strong> and am
-                    actively
-                    seeking full-time software engineering roles.</p>
-
-                <p>My interests sit at the intersection of <strong>AI, voice technology, and web development</strong>.
-                    I've built a real-time voice AI assistant inspired by Iron Man's JARVIS, complete with speech
-                    recognition,
-                    natural language understanding, and task automation.</p>
-
-                <p>I believe in learning by building. Every project teaches me something new — from Flask APIs and
-                    OpenAI integrations to database design and Linux systems.</p>
-
-                <p>Outside of code, I enjoy networking in the tech community, attending workshops, and staying sharp on
-                    emerging trends in AI/ML.</p>
-
-                <div class="stats-grid" style="margin-top:2rem">
-                    <div class="stat-box">
-                        <div class="stat-num">3+</div>
-                        <div class="stat-label">Projects Built</div>
+    <div id="about">
+        <div id="about-inner">
+            <div class="reveal">
+                <div class="sec-tag">01 — About Me</div>
+                <h2>Turning <em>ideas</em><br />into code.</h2>
+                <p class="about-p">I'm <strong>Aman Kumar Singh</strong>, a final-year B.Tech CSE student from
+                    Gorakhpur, India. I graduate in <strong>May 2026</strong> and am actively seeking full-time software
+                    engineering roles.</p>
+                <p class="about-p">My passion lies in <strong>AI-powered applications and voice technology</strong>. I
+                    built JARVIS — a real-time voice AI assistant with 92% recognition accuracy and sub-1.2s latency —
+                    completely from scratch.</p>
+                <p class="about-p">I also have hands-on <strong>machine learning experience</strong> from my NIELIT
+                    internship, covering data preprocessing, supervised/unsupervised algorithms, and model evaluation.
+                </p>
+                <div class="about-stats">
+                    <div class="astat">
+                        <div class="astat-num">40<span>+</span></div>
+                        <div class="astat-lbl">Voice Commands Built</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-num">40+</div>
-                        <div class="stat-label">Voice Commands (JARVIS)</div>
+                    <div class="astat">
+                        <div class="astat-num">92<span>%</span></div>
+                        <div class="astat-lbl">JARVIS Accuracy</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-num">1.2s</div>
-                        <div class="stat-label">Avg AI Response</div>
+                    <div class="astat">
+                        <div class="astat-num">1.2<span>s</span></div>
+                        <div class="astat-lbl">Avg AI Response</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-num">92%</div>
-                        <div class="stat-label">Voice Accuracy</div>
+                    <div class="astat">
+                        <div class="astat-num">3<span>+</span></div>
+                        <div class="astat-lbl">Projects Shipped</div>
                     </div>
                 </div>
             </div>
 
-            <div class="reveal" style="animation-delay:0.2s">
-                <div class="terminal">
-                    <div class="terminal-bar">
-                        <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                        <span style="font-size:0.72rem;color:var(--muted);margin-left:0.5rem">~/aman-kumar-singh</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div><span class="t-prompt">❯ </span><span class="t-cmd">cat about.json</span></div>
-                        <div><span class="t-output">{</span></div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-str">"Aman Kumar
-                                Singh"</span>,</div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"degree"</span>: <span class="t-str">"B.Tech CSE"</span>,
-                        </div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"college"</span>: <span class="t-str">"ITM
-                                Gorakhpur"</span>,</div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"graduating"</span>: <span class="t-str">"May 2026"</span>,
-                        </div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"stack"</span>: [<span class="t-str">"Python"</span>, <span
-                                class="t-str">"JavaScript"</span>, <span class="t-str">"Java"</span>],</div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"interests"</span>: [<span class="t-str">"AI/ML"</span>,
-                            <span class="t-str">"Voice Tech"</span>, <span class="t-str">"Web Dev"</span>],
-                        </div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"openToWork"</span>: <span class="t-val">true</span>,</div>
-                        <div>&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-str">"Gorakhpur,
-                                India"</span></div>
-                        <div><span class="t-output">}</span></div>
-                        <div style="margin-top:0.5rem"><span class="t-prompt">❯ </span><span class="t-cursor"></span>
+            <div class="reveal" style="transition-delay:0.15s">
+                <div class="sec-tag" style="margin-bottom:1.5rem">Skills</div>
+                <div class="skills-wrap">
+                    <div class="skill-row">
+                        <div class="skill-row-label">Languages</div>
+                        <div class="skill-pills">
+                            <span class="pill p">Python</span>
+                            <span class="pill">JavaScript</span>
+                            <span class="pill">Java</span>
                         </div>
                     </div>
-                </div>
-
-                <div style="margin-top: 2rem;">
-                    <div class="section-label" style="margin-bottom:1rem">Tech Stack</div>
-                    <div class="skills-cloud">
-                        <span class="skill-tag hot">Python</span>
-                        <span class="skill-tag hot">JavaScript</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag hot">HTML / CSS</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag trending">OpenAI API</span>
-                        <span class="skill-tag trending">SpeechRecognition</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">pyttsx3</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">LaTeX</span>
-                        <span class="skill-tag trending">NumPy / Pandas</span>
-                        <span class="skill-tag trending">Scikit-learn</span>
+                    <div class="skill-row">
+                        <div class="skill-row-label">Web Development</div>
+                        <div class="skill-pills">
+                            <span class="pill">HTML</span>
+                            <span class="pill">CSS</span>
+                            <span class="pill">React</span>
+                            <span class="pill">Node.js</span>
+                        </div>
                     </div>
-                    <p style="font-size:0.7rem;color:var(--muted);margin-top:0.8rem">
-                        <span style="color:var(--accent3)">■</span> Core skills &nbsp;
-                        <span style="color:var(--accent2)">■</span> AI / ML tools
-                    </p>
+                    <div class="skill-row">
+                        <div class="skill-row-label">AI / ML & Libraries</div>
+                        <div class="skill-pills">
+                            <span class="pill t">OpenAI API</span>
+                            <span class="pill t">SpeechRecognition</span>
+                            <span class="pill t">NumPy</span>
+                            <span class="pill t">Pandas</span>
+                            <span class="pill t">Scikit-learn</span>
+                            <span class="pill t">Matplotlib</span>
+                            <span class="pill t">pyttsx3</span>
+                            <span class="pill t">Flask</span>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-row-label">Tools & Other</div>
+                        <div class="skill-pills">
+                            <span class="pill o">Git</span>
+                            <span class="pill o">GitHub Pages</span>
+                            <span class="pill o">VS Code</span>
+                            <span class="pill o">Linux</span>
+                            <span class="pill o">LaTeX</span>
+                            <span class="pill o">Databases</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- PROJECTS -->
     <section id="projects">
-        <div class="section-label">02 — Projects</div>
-        <h2>Selected Work</h2>
+        <div class="sec-tag reveal">02 — Projects</div>
+        <h2 class="reveal">Work I'm <em>proud of.</em></h2>
 
         <div class="projects-grid">
 
-            <!-- Jarvis AI -->
-            <div class="project-card reveal">
-                <span class="badge-new">Featured</span>
-                <div class="project-year">AI / Voice Technology</div>
-                <div class="project-title">JARVIS AI Assistant</div>
-                <div class="project-desc">
-                    A voice-activated AI assistant inspired by Iron Man's JARVIS. Recognises speech in real time,
-                    automates tasks, and holds natural conversations. Average response latency under 1.2 seconds,
-                    supporting 40+ distinct voice commands with 92% recognition accuracy.
-                </div>
-                <div class="project-tags">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">SpeechRecognition</span>
-                    <span class="project-tag">OpenAI GPT</span>
-                    <span class="project-tag">pyttsx3</span>
-                    <span class="project-tag">Flask</span>
-                    <span class="project-tag">Tkinter</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/MrAmanSingh" class="project-link" target="_blank">⟨/⟩ GitHub</a>
-                    <span style="margin-left:auto;font-size:0.7rem;color:var(--accent3)">92% accuracy</span>
+            <div class="proj-card reveal">
+                <div class="proj-thumb pt-purple">🤖</div>
+                <div class="proj-body">
+                    <div class="proj-year">Featured · AI / Voice</div>
+                    <div class="proj-title">JARVIS AI Assistant</div>
+                    <div class="proj-desc">Iron Man-inspired voice AI that recognises speech in real time, holds natural
+                        conversations, and automates 40+ tasks — with 92% accuracy and sub-1.2s response time.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Python</span>
+                        <span class="proj-tag">OpenAI GPT</span>
+                        <span class="proj-tag">SpeechRecognition</span>
+                        <span class="proj-tag">pyttsx3</span>
+                        <span class="proj-tag">Flask</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://github.com/MrAmanSingh" class="proj-link" target="_blank">⟨/⟩ GitHub</a>
+                        <span class="proj-badge">92% accuracy</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Portfolio Website -->
-            <div class="project-card reveal" style="animation-delay:0.1s">
-                <div class="project-year">Web Development</div>
-                <div class="project-title">Personal Portfolio Website</div>
-                <div class="project-desc">
-                    A responsive personal portfolio website to showcase projects, skills, and resume.
-                    Built with semantic HTML, custom CSS layouts, and vanilla JavaScript.
-                    Hosted on GitHub Pages with zero-cost deployment and fast load times.
-                </div>
-                <div class="project-tags">
-                    <span class="project-tag">HTML</span>
-                    <span class="project-tag">CSS</span>
-                    <span class="project-tag">JavaScript</span>
-                    <span class="project-tag">GitHub Pages</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/MrAmanSingh" class="project-link" target="_blank">⟨/⟩ GitHub</a>
-                    <a href="#" class="project-link">↗ Live</a>
-                </div>
-            </div>
-
-            <!-- Future: ML Project -->
-            <div class="project-card reveal" style="animation-delay:0.2s">
-                <span class="badge-new">2025</span>
-                <div class="project-year">Machine Learning · Internship</div>
-                <div class="project-title">ML Practice Projects</div>
-                <div class="project-desc">
-                    Hands-on ML models built during the NIELIT AI/ML certification — covering clustering,
-                    regression, and classification use cases. Implemented with NumPy, Pandas, Scikit-learn,
-                    and Matplotlib for data visualisation and evaluation.
-                </div>
-                <div class="project-tags">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">Scikit-learn</span>
-                    <span class="project-tag">NumPy</span>
-                    <span class="project-tag">Pandas</span>
-                    <span class="project-tag">Matplotlib</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/MrAmanSingh" class="project-link" target="_blank">⟨/⟩ GitHub</a>
+            <div class="proj-card reveal" style="transition-delay:0.1s">
+                <div class="proj-thumb pt-teal">🌐</div>
+                <div class="proj-body">
+                    <div class="proj-year">Web Development</div>
+                    <div class="proj-title">Personal Portfolio Website</div>
+                    <div class="proj-desc">Responsive portfolio website showcasing projects, skills, and resume. Built
+                        with semantic HTML, custom CSS, and vanilla JavaScript. Deployed via GitHub Pages.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">HTML</span>
+                        <span class="proj-tag">CSS</span>
+                        <span class="proj-tag">JavaScript</span>
+                        <span class="proj-tag">GitHub Pages</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://github.com/MrAmanSingh" class="proj-link" target="_blank">⟨/⟩ GitHub</a>
+                        <a href="#" class="proj-link">↗ Live</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Future roadmap card -->
-            <div class="project-card reveal" style="animation-delay:0.3s;opacity:0.7;">
-                <span class="badge-new"
-                    style="background:rgba(250,109,109,0.1);color:var(--accent2);border-color:rgba(250,109,109,0.3)">Coming
-                    Soon</span>
-                <div class="project-year">2025 · Full Stack</div>
-                <div class="project-title">AI-Powered Task Manager</div>
-                <div class="project-desc">
-                    Upcoming project — a full-stack productivity app with natural language task creation
-                    powered by GPT, real-time sync, and smart priority scheduling. Building with React,
-                    Node.js, and PostgreSQL.
+            <div class="proj-card reveal" style="transition-delay:0.2s">
+                <div class="proj-thumb pt-orange">📊</div>
+                <div class="proj-body">
+                    <div class="proj-year">2025 · Machine Learning</div>
+                    <div class="proj-title">ML Practice Projects</div>
+                    <div class="proj-desc">Hands-on ML models from my NIELIT internship — clustering, regression, and
+                        classification algorithms applied to real datasets, with full data preprocessing and
+                        visualisation pipelines.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Python</span>
+                        <span class="proj-tag">Scikit-learn</span>
+                        <span class="proj-tag">Pandas</span>
+                        <span class="proj-tag">Matplotlib</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://github.com/MrAmanSingh" class="proj-link" target="_blank">⟨/⟩ GitHub</a>
+                        <span class="proj-badge">NIELIT Certified</span>
+                    </div>
                 </div>
-                <div class="project-tags">
-                    <span class="project-tag">React</span>
-                    <span class="project-tag">Node.js</span>
-                    <span class="project-tag">PostgreSQL</span>
-                    <span class="project-tag">OpenAI API</span>
-                </div>
-                <div class="project-links">
-                    <span style="font-size:0.75rem;color:var(--muted)">In progress...</span>
+            </div>
+
+            <div class="proj-card coming reveal" style="transition-delay:0.3s">
+                <div class="proj-thumb pt-ink"
+                    style="font-size:2rem;color:rgba(255,255,255,0.15);font-family:var(--font-display);font-style:italic">
+                    In Progress</div>
+                <div class="proj-body">
+                    <div class="proj-year">Coming 2025 · Full Stack</div>
+                    <div class="proj-title">AI Task Manager</div>
+                    <div class="proj-desc">Full-stack productivity app with natural language task creation via GPT,
+                        smart priority scheduling, and real-time sync — currently in development.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">React</span>
+                        <span class="proj-tag">Node.js</span>
+                        <span class="proj-tag">PostgreSQL</span>
+                        <span class="proj-tag">OpenAI</span>
+                    </div>
+                    <div class="proj-footer">
+                        <span style="font-size:0.76rem;color:var(--muted)">🔨 Building...</span>
+                    </div>
                 </div>
             </div>
 
@@ -1162,166 +280,206 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience">
-        <div class="section-label">03 — Experience</div>
-        <h2>Where I've Trained</h2>
+    <div id="experience">
+        <div id="exp-inner">
+            <div class="sec-tag reveal">03 — Experience</div>
+            <h2 class="reveal">Where I've <em>trained.</em></h2>
+            <div class="exp-timeline">
 
-        <div class="exp-list">
-
-            <div class="exp-item reveal">
-                <div class="exp-period">Summer<br />2025</div>
-                <div class="exp-dot"></div>
-                <div>
-                    <div class="exp-company">NIELIT Gorakhpur</div>
-                    <div class="exp-role">AI / ML Intern — Python</div>
-                    <div class="exp-desc">
-                        Completed a hands-on certification covering core concepts of machine learning and artificial
-                        intelligence.
-                        Gained practical knowledge in data preprocessing, model evaluation, and supervised/unsupervised
-                        learning algorithms. Built small-scale ML models applying real-world use cases in clustering,
-                        regression,
-                        and classification using industry-standard Python libraries.
+                <div class="exp-row reveal">
+                    <div class="exp-date">Summer 2025<br />National Institute of<br />Electronics &amp; IT</div>
+                    <div class="exp-line">
+                        <div class="exp-circle"></div>
+                        <div class="exp-vline"></div>
                     </div>
-                    <div class="exp-tech">
-                        <span>Python</span><span>NumPy</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span>
+                    <div>
+                        <div class="exp-co">NIELIT Gorakhpur</div>
+                        <div class="exp-ro">AI / ML Intern — Python</div>
+                        <div class="exp-de">Completed a hands-on certification in machine learning and artificial
+                            intelligence. Gained practical skills in data preprocessing, supervised and unsupervised
+                            learning, and model evaluation. Built real-world ML models for clustering, regression, and
+                            classification tasks.</div>
+                        <div class="exp-chips">
+                            <span class="exp-chip">Python</span><span class="exp-chip">NumPy</span><span
+                                class="exp-chip">Pandas</span><span class="exp-chip">Scikit-learn</span><span
+                                class="exp-chip">Matplotlib</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="exp-item reveal" style="animation-delay:0.1s">
-                <div class="exp-period">Apr 2025</div>
-                <div class="exp-dot"></div>
-                <div>
-                    <div class="exp-company">PYNET Lab</div>
-                    <div class="exp-role">Workshop Participant — Networking Fundamentals</div>
-                    <div class="exp-desc">
-                        Attended an intensive workshop on Networking Fundamentals, gaining foundational knowledge of
-                        network protocols, IP addressing, routing concepts, and the OSI model — skills essential for
-                        understanding distributed systems and cloud infrastructure.
+                <div class="exp-row reveal" style="transition-delay:0.1s">
+                    <div class="exp-date">April 2025<br />PYNET Lab</div>
+                    <div class="exp-line">
+                        <div class="exp-circle"></div>
+                        <div class="exp-vline"></div>
                     </div>
-                    <div class="exp-tech">
-                        <span>Networking</span><span>TCP/IP</span><span>OSI Model</span><span>Routing</span>
+                    <div>
+                        <div class="exp-co">PYNET Lab</div>
+                        <div class="exp-ro">Workshop — Networking Fundamentals</div>
+                        <div class="exp-de">Intensive workshop on network protocols, IP addressing, routing concepts,
+                            and the OSI model — foundational knowledge for distributed systems and cloud infrastructure.
+                        </div>
+                        <div class="exp-chips">
+                            <span class="exp-chip">Networking</span><span class="exp-chip">TCP/IP</span><span
+                                class="exp-chip">OSI Model</span><span class="exp-chip">Routing</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="exp-item reveal" style="animation-delay:0.2s">
-                <div class="exp-period">2022<br />— Present</div>
-                <div class="exp-dot"></div>
-                <div>
-                    <div class="exp-company">Self-Directed Learning</div>
-                    <div class="exp-role">Independent Developer</div>
-                    <div class="exp-desc">
-                        Continuously building projects to sharpen full-stack and AI skills beyond the curriculum.
-                        Contributions to personal GitHub repos, studying data structures and algorithms, and
-                        actively participating in coding challenges and hackathons.
+                <div class="exp-row reveal" style="transition-delay:0.2s">
+                    <div class="exp-date">2022 — Present<br />Self Directed</div>
+                    <div class="exp-line">
+                        <div class="exp-circle"></div>
+                        <div class="exp-vline"></div>
                     </div>
-                    <div class="exp-tech">
-                        <span>Python</span><span>JavaScript</span><span>DSA</span><span>Git</span><span>Linux</span>
+                    <div>
+                        <div class="exp-co">Independent Developer</div>
+                        <div class="exp-ro">Personal Projects &amp; Continuous Learning</div>
+                        <div class="exp-de">Building full-stack and AI projects beyond the curriculum to sharpen
+                            real-world skills. Studying DSA, participating in coding challenges, and maintaining an
+                            active GitHub presence.</div>
+                        <div class="exp-chips">
+                            <span class="exp-chip">Python</span><span class="exp-chip">JavaScript</span><span
+                                class="exp-chip">DSA</span><span class="exp-chip">Git</span><span
+                                class="exp-chip">Linux</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </section>
+    </div>
 
     <!-- EDUCATION -->
     <section id="education">
-        <div class="section-label">04 — Education</div>
-        <h2>Academic Background</h2>
+        <div class="sec-tag reveal">04 — Education</div>
+        <h2 class="reveal">Academic <em>background.</em></h2>
 
-        <div class="edu-card reveal">
+        <div class="edu-box reveal">
             <div>
-                <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
+                <div class="edu-badge">🎓</div>
+                <div class="edu-deg">B.Tech — Computer Science &amp; Engineering</div>
                 <div class="edu-inst">Institute of Technology and Management, Gorakhpur</div>
-                <div class="edu-courses">
-                    Relevant Coursework: Data Structures &amp; Algorithms · Web Development · Databases ·
-                    Object-Oriented Programming · Operating Systems · Computer Networks
-                </div>
+                <div class="edu-courses">Data Structures &amp; Algorithms · Web Development · Databases · OOP ·
+                    Operating Systems · Computer Networks</div>
             </div>
             <div class="edu-year">
-                <div style="color:var(--accent3);font-size:0.9rem;font-weight:700;margin-bottom:0.3rem">2022 — 2026
-                </div>
-                <div> May 2026</div>
+                <strong>2026</strong>
+                Graduated<br />May 2026
             </div>
         </div>
 
-        <!-- Workshops & Certs -->
-        <div style="margin-top:3rem">
-            <div class="section-label" style="margin-bottom:1.5rem">Workshops &amp; Certifications</div>
-            <div class="workshops-grid">
-
-                <div class="workshop-card reveal">
-                    <div class="workshop-icon">🤖</div>
-                    <div class="workshop-title">AI / ML using Python</div>
-                    <div class="workshop-org">NIELIT — National Institute of Electronics &amp; IT</div>
-                    <div class="workshop-date">Summer 2025 · Gorakhpur, Uttar Pradesh</div>
-                </div>
-
-                <div class="workshop-card reveal" style="animation-delay:0.1s">
-                    <div class="workshop-icon">🌐</div>
-                    <div class="workshop-title">Networking Fundamentals</div>
-                    <div class="workshop-org">PYNET Lab</div>
-                    <div class="workshop-date">April 2025</div>
-                </div>
-
-                <div class="workshop-card reveal" style="animation-delay:0.2s">
-                    <div class="workshop-icon">💻</div>
-                    <div class="workshop-title">Data Structures &amp; Algorithms</div>
-                    <div class="workshop-org">Self Study / Online Platforms</div>
-                    <div class="workshop-date">Ongoing</div>
-                </div>
-
-                <div class="workshop-card reveal" style="animation-delay:0.3s">
-                    <div class="workshop-icon">🎤</div>
-                    <div class="workshop-title">Voice AI &amp; NLP Systems</div>
-                    <div class="workshop-org">Project-Based Learning</div>
-                    <div class="workshop-date">2024 — 2025</div>
-                </div>
-
+        <div class="cert-grid">
+            <div class="cert-card reveal">
+                <div class="cert-icon">🤖</div>
+                <div class="cert-title">AI / ML using Python</div>
+                <div class="cert-org">NIELIT — National Institute of Electronics &amp; IT</div>
+                <div class="cert-date">Summer 2025 · Gorakhpur, UP</div>
+            </div>
+            <div class="cert-card reveal" style="transition-delay:0.1s">
+                <div class="cert-icon">🌐</div>
+                <div class="cert-title">Networking Fundamentals</div>
+                <div class="cert-org">PYNET Lab</div>
+                <div class="cert-date">April 2025</div>
+            </div>
+            <div class="cert-card reveal" style="transition-delay:0.2s">
+                <div class="cert-icon">🎙️</div>
+                <div class="cert-title">Voice AI &amp; NLP Systems</div>
+                <div class="cert-org">Project-Based Learning</div>
+                <div class="cert-date">2024 — 2025</div>
+            </div>
+            <div class="cert-card reveal" style="transition-delay:0.3s">
+                <div class="cert-icon">💻</div>
+                <div class="cert-title">Data Structures &amp; Algorithms</div>
+                <div class="cert-org">Ongoing Self Study</div>
+                <div class="cert-date">2022 — Present</div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-        <div class="section-label">05 — Contact</div>
+    <div id="contact">
         <div id="contact-inner">
-            <h2>Let's Build<br />Something Great.</h2>
-            <p>
-                I'm actively looking for <strong style="color:var(--text)">software engineering internships and
-                    full-time roles</strong>
-                starting mid-2026 — particularly in AI, full-stack development, or backend engineering.
-                I'm a fast learner, a dedicated builder, and I bring energy to every team I join.
-                Let's connect!
-            </p>
-            <div class="contact-links">
-                <a href="mailto:amankumarsingh0008@gmail.com" class="btn-primary">✉ Email Me</a>
-                <a href="https://www.linkedin.com/in/aman-singh-a5613020a" class="btn-ghost" target="_blank">LinkedIn
-                    ↗</a>
-                <a href="https://github.com/MrAmanSingh" class="btn-ghost" target="_blank">GitHub ↗</a>
+            <div class="reveal">
+                <div class="sec-tag" style="color:var(--teal)">05 — Contact</div>
+                <h2>Let's build<br /><em>something great.</em></h2>
+                <p class="contact-p">I'm actively looking for software engineering internships and full-time roles
+                    starting mid-2026 — in AI, full-stack, or backend engineering. Fast learner, dedicated builder.
+                    Let's connect!</p>
+                <div class="contact-links">
+                    <a href="mailto:amankumarsingh0008@gmail.com" class="contact-pill cp-fill">✉ Email Me</a>
+                    <a href="https://www.linkedin.com/in/aman-kumar-singh-a5613020a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        class="contact-pill cp-ghost" target="_blank">LinkedIn ↗</a>
+                    <a href="https://github.com/MrAmanSingh" class="contact-pill cp-ghost" target="_blank">GitHub ↗</a>
+                </div>
             </div>
-            <div style="margin-top:2rem;font-size:0.75rem;color:var(--muted)">
-                📱 +91 9453608506 &nbsp;·&nbsp; 📍 Gorakhpur, Uttar Pradesh, India
+            <div class="contact-info-grid reveal" style="transition-delay:0.15s">
+                <div class="cig-row">
+                    <div class="cig-icon">✉️</div>
+                    <div>
+                        <div class="cig-label">Email</div>
+                        <div class="cig-val"><a
+                                href="mailto:amankumarsingh0008@gmail.com">amankumarsingh0008@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="cig-row">
+                    <div class="cig-icon">📱</div>
+                    <div>
+                        <div class="cig-label">Phone</div>
+                        <div class="cig-val">+91 9453608506</div>
+                    </div>
+                </div>
+                <div class="cig-row">
+                    <div class="cig-icon">💼</div>
+                    <div>
+                        <div class="cig-label">LinkedIn</div>
+                        <div class="cig-val"><a href="https://www.linkedin.com/in/aman-singh-a5613020a"
+                                target="_blank">Aman Singh</a></div>
+                    </div>
+                </div>
+                <div class="cig-row">
+                    <div class="cig-icon">🐙</div>
+                    <div>
+                        <div class="cig-label">GitHub</div>
+                        <div class="cig-val"><a href="https://github.com/MrAmanSingh" target="_blank">Aman Singh</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cig-row">
+                    <div class="cig-icon">📍</div>
+                    <div>
+                        <div class="cig-label">Location</div>
+                        <div class="cig-val">Gorakhpur, Uttar Pradesh, India</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
     <footer>
-        <span>Designed &amp; built by Aman Kumar Singh &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; Gorakhpur, India</span>
+        <span class="footer-name">Aman Kumar Singh</span>
+        <span>Designed &amp; built with ♥ · 2025 · Gorakhpur, India</span>
+        <span>amankumarsingh0008@gmail.com</span>
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    observer.unobserve(e.target);
-                }
-            });
+        // Custom cursor
+        const cur = document.getElementById('cur');
+        const ring = document.getElementById('curRing');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px'; });
+        function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); }
+        animRing();
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => { cur.style.width = '20px'; cur.style.height = '20px'; cur.style.background = 'var(--orange)'; });
+            el.addEventListener('mouseleave', () => { cur.style.width = '12px'; cur.style.height = '12px'; cur.style.background = 'var(--purple)'; });
+        });
+
+        // Scroll reveal
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); obs.unobserve(e.target); } });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     </script>
 </body>
 
