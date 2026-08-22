@@ -35,7 +35,6 @@
             cursor: none;
         }
 
-        /* CUSTOM CURSOR */
         .cursor {
             position: fixed;
             width: 12px;
@@ -66,7 +65,6 @@
             opacity: 1;
         }
 
-        /* NAV */
         nav {
             position: fixed;
             top: 0;
@@ -131,7 +129,6 @@
             color: white;
         }
 
-        /* HERO */
         #hero {
             min-height: 100vh;
             display: grid;
@@ -298,7 +295,6 @@
             background: var(--border);
         }
 
-        /* HERO RIGHT — 3D SHAPES SCENE */
         .hero-right {
             position: relative;
             height: 560px;
@@ -313,7 +309,6 @@
             height: 440px;
         }
 
-        /* Big purple circle bg */
         .shape-scene::before {
             content: '';
             position: absolute;
@@ -334,7 +329,6 @@
             overflow: hidden;
         }
 
-        /* Main white card */
         .card-main {
             width: 260px;
             background: white;
@@ -405,7 +399,6 @@
             color: var(--orange);
         }
 
-        /* Floating stat cards */
         .mini-card {
             position: absolute;
             background: white;
@@ -544,7 +537,6 @@
             z-index: 7;
         }
 
-        /* SECTION COMMON */
         section {
             max-width: 1300px;
             margin: 0 auto;
@@ -587,7 +579,6 @@
             color: var(--purple);
         }
 
-        /* DIVIDER */
         .divider {
             width: 100%;
             height: 1px;
@@ -596,7 +587,6 @@
             margin: 0 auto;
         }
 
-        /* ABOUT */
         #about {
             background: white;
             max-width: 100%;
@@ -657,7 +647,6 @@
             letter-spacing: 0.06em;
         }
 
-        /* SKILLS */
         .skills-wrap {
             display: flex;
             flex-direction: column;
@@ -718,7 +707,6 @@
             color: var(--orange);
         }
 
-        /* PROJECTS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -865,7 +853,6 @@
             background: var(--cream);
         }
 
-        /* EXPERIENCE */
         #experience {
             background: white;
             max-width: 100%;
@@ -972,7 +959,6 @@
         }
 
 
-        /* EDUCATION & CERTS */
         .edu-box {
             background: white;
             border-radius: 20px;
@@ -1076,7 +1062,6 @@
             color: var(--muted);
         }
 
-        /* CONTACT */
         #contact {
             background: var(--ink);
             max-width: 100%;
@@ -1192,7 +1177,6 @@
             color: white;
         }
 
-        /* FOOTER */
         footer {
             background: var(--ink);
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -1210,7 +1194,6 @@
             color: rgba(255, 255, 255, 0.4);
         }
 
-        /* REVEAL */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -1222,7 +1205,6 @@
             transform: none;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 900px) {
             #hero {
                 grid-template-columns: 1fr;
