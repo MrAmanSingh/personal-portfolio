@@ -970,6 +970,28 @@
             color: var(--muted);
             background: var(--cream);
         }
+        .training-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #007bff; /* Adjust color to match your theme */
+            background: #f9f9f9;
+        }
+
+        .training-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .institution {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .duration {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
 
         /* EDUCATION & CERTS */
         .edu-box {
